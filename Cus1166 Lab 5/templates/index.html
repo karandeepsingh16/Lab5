@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+
+<ul>
+{% block courses %}
+    <li>
+        {% for course in courses %}
+            {{course[0]}}: {{course[1]}}<br>
+        {% endfor %}
+    </li>
+{% endblock %}
+</ul>
+
+
+<form action = "" method= "POST" novalidate>
+    {{ course_form.hidden_tag()}}
+    <p>
+        {{ course_form.class_id.label }}
+        {{ course_form.class_id(size=32) }}
+        {{ course_form.class_id.label }}
+    </p>
+</form>
